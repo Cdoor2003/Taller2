@@ -116,25 +116,35 @@ public class GestorPersonal {
 	}
 
 	public void obtenerPersonasMarca(String marca) {
-
+		for (Persona persona : this.personas){
+			if(buscarMarcaDeAuto(marca) != null){
+				System.out.println(persona.getNombre() +" "+ persona.getApellido() +" "+ persona.getRut());
+			}
+			else {
+				System.out.println("No se encontraron personas con ese nombre");
+			}
+		}
 	}
 
 	public void obtenerPersonaNombre(String nombre) {
-		String nombrePersona ="";
-		if(buscarPersonasPorNombre(nombre) != null){
-			nombrePersona += buscarPersonasPorNombre(nombre);
-			System.out.println(nombrePersona);
-		}
-		else {
-			System.out.println("No se encontraron personas con ese nombre");
+		for (Persona persona : this.personas){
+			if(buscarPersonasPorNombre(nombre) != null){
+				System.out.println(persona.getNombre() +" "+ persona.getApellido() +" "+ persona.getRut());
+			}
+			else {
+				System.out.println("No se encontraron personas con ese nombre");
+			}
 		}
 	}
 
 	public void obtenerPersonaRut(int rut) {
-		int rutPersona = 0;
-		if(buscarPersonaPorRut(rut) == rut){
-			rutPersona += buscarPersonaPorRut(rut);
-			System.out.println(rut);
+		for(Persona persona: this.personas){
+			if(buscarPersonaPorRut(rut) == rut){
+				System.out.println(persona.getNombre() +" "+ persona.getApellido() +" "+ persona.getRut());
+			}
+			else{
+				System.out.println("No se encontraron personas con este rut");
+			}
 		}
 	}
 }

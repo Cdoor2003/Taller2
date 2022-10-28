@@ -6,8 +6,5 @@ public class Launcher {
     }
 
     public void inicializar() {
-        GestorPersonal gestorPersonal = new GestorPersonal();
-        gestorPersonal.agregarPersonas("juan","brun",2);
-        gestorPersonal.obtenerPersonaNombre("juan");
     }
 }
